@@ -1,6 +1,7 @@
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:chat_app/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -17,25 +18,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 2),
       vsync: this,
       upperBound: 1,
     );
-
-    animation = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
+        .animate(controller);
 
     controller.forward();
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse(from: 1);
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
 
     controller.addListener(() {
       setState(() {});
@@ -53,7 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -66,12 +56,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   tag: 'login',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: animation.value * 100,
+                    height: 60,
                   ),
                 ),
-                Text(
-                  'Flash Chat',
-                  style: TextStyle(
+                TypewriterAnimatedTextKit(
+                  text: ['Flash Chat'],
+                  textStyle: TextStyle(
                     color: Colors.blueGrey,
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
