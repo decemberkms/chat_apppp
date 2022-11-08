@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "75063135218",
+    "project_id": "chatapp-d0b05",
+    "storage_bucket": "chatapp-d0b05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75063135218:android:d7ac64a8ab4423bae8f96b",
+        "android_client_info": {
+          "package_name": "com.decemberkms.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75063135218-puh0laoui2k0ajiavbd75404gir4h0t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWPo9dDrsREGXpMA3Dq-JpWQgmZVcucrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75063135218-puh0laoui2k0ajiavbd75404gir4h0t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
